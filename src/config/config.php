@@ -7,7 +7,8 @@ return array(
 		
 	//Include foreign keys for you database if you want.
 	//But it produces errors in some envorinments, therefore its disables by default.
-	'useForeignKeys' => false
-
-
+	'useForeignKeys' => false,
+	
+	// default connection to be used with models
+	'connection' => null
 );
