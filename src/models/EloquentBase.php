@@ -47,7 +47,14 @@ class EloquentBase extends \Eloquent {
 
         //Rewrite with the correct prefix
         $this->table = static::tableName($baseTableName);
+        
+        //Set db connection if available
+        $connection = \Config::get('hermes.connection');
+        if($connection){
+            $this->connection = $connection;
+        }
     }
+    
 
     protected function getUser($user = null){
         if(!$user)  $user = \Auth::user();
